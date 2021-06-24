@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+<link rel="stylesheet" th:href="@{/css/custom.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+<title>LucaSteam</title>
+</head>
+<body>
+	<div class="jumbotron" id="jumbo">
+		<h1>List Game</h1>
+	</div>
+	<div class="container text-right">
+		<button>
+			<i class="fal fa-gamepad-alt"></i>&nbsp;&nbsp;New game
+		</button>
+		<br>
+	</div>
+	<div class="container text-center">
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Rank</th>
+					<th scope="col">Name</th>
+					<th scope="col">Platform</th>
+					<th scope="col">Genre</th>
+					<th scope="col">Year</th>
+					<th scope="col">Publisher</th>
+					<th scope="col">NA Sales</th>
+					<th scope="col">EU Sales</th>
+					<th scope="col">JP Sales</th>
+					<th scope="col">Other Sales</th>
+					<th scope="col">Global Sales</th>
+					<th scope="col">Options</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="game, status : ${gameList}">
+					<td th:text="${status.index + 1}" />
+					<td th:text="${user.name}" />
+					<td th:text="${user.platform}" />
+					<td th:text="${user.genre}" />
+					<td th:text="${user.year}" />
+					<td th:text="${user.publisher}" />
+					<td th:text="${user.NA_Sales}" />
+					<td th:text="${user.EU_Sales}" />
+					<td th:text="${user.JP_Sales}" />
+					<td th:text="${user.other_sales}" />
+					<td th:text="${user.global_sales}" />
+					<td>
+						<button type="button" class="btn btn-outline-primary">
+							<a th:href="@{/edit(id=${game.rank})}"><i
+								class="fas fa-pencil-alt"></i></a>
+						</button>
+						<button type="button" class="btn btn-outline-danger">
+							<a th:href="@{/delete(id=${game.rank})}"><i
+								class="fas fa-eraser"></i></a>
+						</button>
+
+					</td>
+				</tr>
+			</tbody>
+
+
+
+			</div>
+</body>
+</html>
