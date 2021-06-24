@@ -11,7 +11,7 @@ import com.ejemplos.spring.model.Game;
 @Repository
 public interface GameDAO extends JpaRepository<Game,Integer> {
 
-	@Query("SELECT name FROM vgsales WHERE name =?1")
-	List<Game> findByName(String name);
+//	@Query("SELECT name FROM vgsales WHERE name =?1")
+//	List<Game> findByName(String name);
 
 }

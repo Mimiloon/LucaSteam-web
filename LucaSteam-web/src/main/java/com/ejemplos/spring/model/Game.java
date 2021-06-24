@@ -17,6 +17,9 @@ public class Game {
 	/**
 	 * Identificador del juego
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Rank")
 	private int rank;
 	/**
 	 * Nombre del juego
@@ -101,9 +104,6 @@ public class Game {
 		this.global_sales = global_sales;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Rank")
 	// ---------------------------
 	// Metodos setters y getters
 	// ---------------------------
