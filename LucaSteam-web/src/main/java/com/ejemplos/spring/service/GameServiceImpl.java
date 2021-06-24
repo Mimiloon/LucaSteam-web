@@ -31,13 +31,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public void save(Game game) {
 		gameDAO.save(game);	
-
 	}
 
 	@Override
 	public void deleteByRank(int rank) {
 		gameDAO.deleteById(rank);
-
 	}
 
 	@Override

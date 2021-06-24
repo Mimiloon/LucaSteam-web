@@ -44,8 +44,8 @@ public class GameController {
 	}
 
 	// BORRAR JUEGOS
-	@GetMapping("/lucasteam/delete")
-	public String deleteGame(@RequestParam("rank") int rank) {
+	@GetMapping("/lucasteam/delete") 
+	public String deleteGame(@RequestParam("rank") int rank) { 
 		log.info("----- Inside deleteGame");
 		service.deleteByRank(rank);
 		return ("redirect:/lucasteam");
@@ -70,7 +70,7 @@ public class GameController {
 	public ModelAndView saveGame(Game game) {
 		log.info("----- Inside saveGame");
 		service.save(game);
-		return new ModelAndView("redirect:/lucasteam/");
+		return new ModelAndView("redirect:/lucasteam");
 	}
 
 }

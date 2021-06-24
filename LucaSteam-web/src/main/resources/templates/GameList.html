@@ -53,11 +53,11 @@
 					<td th:text="${game.global_sales}" />
 					<td>
 						<button type="button" class="btn btn-primary">
-							<a th:href="@{/edit(id=${game.rank})}"><i
+							<a th:href="@{/lucasteam/edit(rank=${game.rank})}"><i
 								class="fas fa-pencil-alt"></i></a>
 						</button>
 						<button type="button" class="btn btn-danger">
-							<a th:href="@{/delete(id=${game.rank})}"><i
+							<a th:href="@{/lucasteam/delete(rank=${game.rank})}"><i
 								class="fas fa-eraser"></i></a>
 						</button>
 
