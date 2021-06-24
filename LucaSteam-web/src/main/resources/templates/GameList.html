@@ -14,8 +14,8 @@
 		<h1>List Game</h1>
 	</div>
 	<div class="container text-right">
-		<button>
-			<i class="fal fa-gamepad-alt"></i>&nbsp;&nbsp;New game
+		<button type="submit" class="btn btn-info">
+			<a href="/lucasteam/new"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;New game</a>
 		</button>
 		<br>
 	</div>
@@ -52,11 +52,11 @@
 					<td th:text="${game.other_sales}" />
 					<td th:text="${game.global_sales}" />
 					<td>
-						<button type="button" class="btn btn-outline-primary">
+						<button type="button" class="btn btn-primary">
 							<a th:href="@{/edit(id=${game.rank})}"><i
 								class="fas fa-pencil-alt"></i></a>
 						</button>
-						<button type="button" class="btn btn-outline-danger">
+						<button type="button" class="btn btn-danger">
 							<a th:href="@{/delete(id=${game.rank})}"><i
 								class="fas fa-eraser"></i></a>
 						</button>

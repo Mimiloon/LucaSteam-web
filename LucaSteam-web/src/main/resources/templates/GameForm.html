@@ -13,59 +13,124 @@
 	<div class="jumbotron" id="jumbo">
 		<h1>Form Game</h1>
 	</div>
-					<form method="post" th:action="@{/lucasteam/save}" th:object="${game}">
-						<div class="form-group text-left">
-							<label for="id">Id</label> <input type="text"
-								class="form-control" id="alta_id" name="id" readonly>
-						</div>
-						<div class="form-group text-left">
-							<label for="dieta">Tipo de Dieta:</label> <select
-								class="form-control" id="alta_dieta" name="dieta">
-								<option>Dieta Normal</option>
-								<option>Dieta Astrigente</option>
-								<option>Dieta Absoluta</option>
-								<option>Dieta Baja en Potasio</option>
-								<option>Dieta Baja en Proteínas</option>
-								<option>Dieta Diabética</option>
-								<option>Dieta sin Cerdo</option>
-								<option>Dieta Líquida</option>
-								<option>Dieta Pediátrica</option>
-							</select>
-						</div>
-						<div class="form-group text-left">
-							<label for="conSal">¿Desea Sal?</label> <select
-								class="form-control" id="alta_conSal" name="conSal">
-								<option>Con Sal</option>
-								<option>Sin Sal</option>
-							</select>
-						</div>
-						<div class="form-group text-left">
-							<label for="turno">Turno:</label> <select class="form-control"
-								id="alta_turno" name="turno">
-								<option>Comida</option>
-								<option>Cena</option>
-							</select>
-						</div>
-						<div class="form-group text-left">
-							<label for="habitacion">Nº Habitación:</label> <input
-								type="number" class="form-control" id="alta_habitacion"
-								name="habitacion">
-						</div>
-						<div class="form-group text-left">
-							<label for="planta">Planta</label> <input type="text"
-								class="form-control" id="alta_planta" name="planta">
-						</div>
-						<div class="form-group text-left">
-							<label for="fecha">Fecha</label> <input type="date"
-								class="form-control" id="alta_fecha" name="fecha">
-						</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary">Guardar</button>
-					<button type="reset" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-				</div>
-				</form>
-		
+	<div class="container">
+		<div class="row">
+			<div class="offset-4 col-4">
+				<form method="post" th:action="@{/lucasteam/save}"
+					th:object="${game}">
+
+<!-- 					<div class="form-group text-left"> -->
+<!-- 						<label for="Rank">Rank</label> <input type="text" -->
+<!-- 							th:field="*{rank}" class="form-control" id="Rank" name="Rank" -->
+<!-- 							readonly> -->
+<!-- 					</div> -->
+					<div class="form-group text-left">
+						<label for="Name">Name</label> <input type="text"
+							th:field="*{name}" class="form-control" id="Name" name="Name">
+					</div>
+
+					<div class="form-group text-left">
+						<label for="Platform">Platform:</label> <select
+							th:field="*{platform}" class="form-control" id="Platform"
+							name="Platform">
+							<option th:value="'Wii'">Wii</option>
+							<option th:value="'NES'">NES</option>
+							<option th:value="'GB'">GB</option>
+							<option th:value="'DS'">DS</option>
+							<option th:value="'X360'">X360</option>
+							<option th:value="'PS3'">PS3</option>
+							<option th:value="'PS2'">PS2</option>
+							<option th:value="'SNES'">SNES</option>
+							<option th:value="'GBA'">GBA</option>
+							<option th:value="'PS4'">PS4</option>
+							<option th:value="'N64'">N64</option>
+							<option th:value="'XB'">XB</option>
+							<option th:value="'PSP'">PSP</option>
+							<option th:value="'PS'">PS</option>
+							<option th:value="'XOne'">XOne</option>
+							<option th:value="'GC'">GC</option>
+							<option th:value="'WiiU'">WiiU</option>
+							<option th:value="'3DS'">3DS</option>
+							<option th:value="'PC'">PC</option>
+							<option th:value="'A2600'">A2600</option>
+							<option th:value="'3DO'">3DO</option>
+							<option th:value="'DC'">DC</option>
+							<option th:value="'TG16'">TG16</option>
+							<option th:value="'GG'">GG</option>
+							<option th:value="'NG'">NG</option>
+							<option th:value="'PCFX'">PCFX</option>
+							<option th:value="'PSV'">PSV</option>
+							<option th:value="'SAT'">SAT</option>
+							<option th:value="'SCD'">SCD</option>
+							<option th:value="'WS'">WS</option>
+						</select>
+					</div>
+					<div class="form-group text-left">
+						<label for="Year">Year</label> <input type="number"
+							th:field="*{year}" class="form-control" id="Year" name="Year">
+					</div>
+
+					<div class="form-group text-left">
+						<label for="Genre">Genre</label> <select th:field="*{genre}"
+							class="form-control" id="Genre" name="Genre">
+							<option th:value="Sports">Sports</option>
+							<option th:value="Platform">Platform</option>
+							<option th:value="Racing">Racing</option>
+							<option th:value="RolePlaying">RolePlaying</option>
+							<option th:value="Puzzle">Puzzle</option>
+							<option th:value="Misc">Misc</option>
+							<option th:value="Shooter">Shooter</option>
+							<option th:value="Action">Action</option>
+							<option th:value="Fighting">Fighting</option>
+							<option th:value="Adventure">Adventure</option>
+							<option th:value="Simulation">Simulation</option>
+							<option th:value="Strategy">Strategy</option>
+						</select>
+					</div>
+					<div class="form-group text-left">
+						<label for="Publisher">Publisher</label> <input type="text"
+							th:field="*{publisher}" class="form-control" id="Publisher"
+							name="Publisher">
+					</div>
+					<div class="form-group text-left">
+						<label for="NA_Sales">NA_Sales</label> <input type="number"
+							step="0.01" th:field="*{NA_Sales}" class="form-control"
+							id="NA_Sales" name="NA_Sales">
+					</div>
+					<div class="form-group text-left">
+						<label for="EU_Sales">EU_Sales</label> <input type="number"
+							step="0.01" th:field="*{EU_Sales}" class="form-control"
+							id="EU_Sales" name="EU_Sales">
+					</div>
+					<div class="form-group text-left">
+						<label for="JP_Sales">JP_Sales</label> <input type="number"
+							step="0.01" th:field="*{JP_Sales}" class="form-control"
+							id="JP_Sales" name="JP_Sales">
+					</div>
+					<div class="form-group text-left">
+						<label for="Other_Sales">Other_Sales</label> <input type="number"
+							step="0.01" th:field="*{other_sales}" class="form-control"
+							id="Other_Sales" name="Other_Sales">
+					</div>
+					<div class="form-group text-left">
+						<label for="Global_Sales">Global_Sales</label> <input
+							type="number" step="0.01" th:field="*{global_sales}"
+							class="form-control" id="Global_Sales" name="Global_Sales">
+					</div>
+			</div>
+			<div class="modal-footer">
+				<tr>
+					<td colspan="2" align="center"><input type="submit"
+						value="Guardar Registro"></td>
+				</tr>
+				<button type="submit" class="btn btn-primary">Guardar</button>
+				<button type="reset" class="btn btn-danger">Cancelar</button>
+			</div>
+			</form>
+		</div>
+	</div>
+
+	</div>
 
 
 </body>

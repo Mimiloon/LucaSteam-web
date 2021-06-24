@@ -70,7 +70,7 @@ public class GameController {
 	public ModelAndView saveGame(Game game) {
 		log.info("----- Inside saveGame");
 		service.save(game);
-		return new ModelAndView("redirect:/lucasteam");
+		return new ModelAndView("redirect:/lucasteam/");
 	}
 
 }
