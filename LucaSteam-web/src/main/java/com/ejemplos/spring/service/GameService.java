@@ -1,6 +1,7 @@
 package com.ejemplos.spring.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.ejemplos.spring.model.Game;
 
@@ -10,7 +11,7 @@ public interface GameService {
 		public List<Game> findAll();
 		
 		//RECUPERAR JUEGOS
-		public Game getOne(int rank);
+		public Optional<Game> getOne(int rank);
 		
 		//ACTUALIZAR Y AÑADIR JUEGOS
 		public void save(Game game);

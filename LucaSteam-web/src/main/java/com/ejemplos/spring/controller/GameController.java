@@ -29,9 +29,9 @@ public class GameController {
 	public String listGame(Model m) {
 		log.info("----- Inside listGame");
 
-//		m.addAttribute("gameList", service.findAll());
+		m.addAttribute("gameList", service.findAll());
 		//TODO borrar y reemplazar con lo de arriba cuando tengamos la bbdd hecha y con datos
-		m.addAttribute("gameList", new ArrayList<>());
+//		m.addAttribute("gameList", new ArrayList<>());
 		return "GameList";
 	}
 
@@ -48,7 +48,7 @@ public class GameController {
 	public String deleteGame(@RequestParam("rank") int rank) {
 		log.info("----- Inside deleteGame");
 		service.deleteByRank(rank);
-		return ("redirect:/");
+		return ("redirect:/lucasteam");
 	}
 
 //	@GetMapping("backoffice/proyectos/delete")
@@ -70,7 +70,7 @@ public class GameController {
 	public ModelAndView saveGame(Game game) {
 		log.info("----- Inside saveGame");
 		service.save(game);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/lucasteam");
 	}
 
 }

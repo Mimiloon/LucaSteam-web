@@ -1,6 +1,7 @@
 package com.ejemplos.spring.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class GameServiceImpl implements GameService {
 
 	// PARA
 	@Override
-	public Game getOne(int rank) {
-		return gameDAO.getOne(rank);
+	public Optional<Game> getOne(int rank) {
+		return gameDAO.findById(rank);
 		
 	}
 
