@@ -24,22 +24,27 @@ public class Game {
 	/**
 	 * Nombre del juego
 	 */
+	@Column(name = "Name")
 	private String name;
 	/**
 	 * Diferentes plataformas de juegos
 	 */
-	private Platform platform;
+	@Column(name = "Platform")
+	private String platform;
 	/**
 	 * Año de salida del juego
 	 */
+	@Column(name = "Year")
 	private int year;
 	/**
 	 * Diferentes generos del juego
 	 */
-	private Genre genre;
+	@Column(name = "Genre")
+	private String genre;
 	/**
 	 * Editor del juego
 	 */
+	@Column(name = "Publisher")
 	private String publisher;
 	/**
 	 * Venta de juegos en Norteamérica
@@ -56,10 +61,12 @@ public class Game {
 	/**
 	 * Otras ventas
 	 */
+	@Column(name = "Other_Sales")
 	private float other_sales;
 	/**
 	 * Ventas globales
 	 */
+	@Column(name = "Global_Sales")
 	private float global_sales;
 
 	// -----------------------
@@ -88,7 +95,7 @@ public class Game {
 	 * @param other_sales  otras ventas
 	 * @param global_sales ventas globales
 	 */
-	public Game(int rank, String name, Platform platform, int year, Genre genre, String publisher, float nA_Sales,
+	public Game(int rank, String name, String platform, int year, String genre, String publisher, float nA_Sales,
 			float eU_Sales, float jP_Sales, float other_sales, float global_sales) {
 		super();
 		this.rank = rank;
@@ -149,7 +156,7 @@ public class Game {
 	 * 
 	 * @return plataforma del juego
 	 */
-	public Platform getPlatform() {
+	public String getPlatform() {
 		return platform;
 	}
 
@@ -158,7 +165,7 @@ public class Game {
 	 * 
 	 * @param platform
 	 */
-	public void setPlatform(Platform platform) {
+	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
 
@@ -185,7 +192,7 @@ public class Game {
 	 * 
 	 * @return genero del juego
 	 */
-	public Genre getGenre() {
+	public String getGenre() {
 		return genre;
 	}
 
@@ -194,7 +201,7 @@ public class Game {
 	 * 
 	 * @param genre
 	 */
-	public void setGenre(Genre genre) {
+	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
