@@ -21,4 +21,13 @@ public interface GameService {
 		
 		//BUSCADOR POR NOMBRE DE JUEGO
 		public List<Game> findByName(String name);
+		
+		//BUSCADOR POR AÑO INTRODUCIDO
+		public List<Game>findByYear(int year);
+		
+		//LISTADO POR GÉNERO: PLATAFORMA
+		public List<Game>findByGenre();
+		
+		//LISTADO POR EDITOR: NINTENDO
+		public List<Game>findByPublisher();
 }
