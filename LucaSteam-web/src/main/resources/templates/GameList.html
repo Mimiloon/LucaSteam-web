@@ -11,13 +11,26 @@
 </head>
 <body>
 	<div class="jumbotron" id="jumbo">
-		<h1>List Game</h1>
+		<h1>LUCASTEAM</h1>
+		<h2>Listado de Juegos</h2>
 	</div>
 	<div class="container text-right">
 		<button type="submit" class="btn btn-info">
 			<a href="/lucasteam/new"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;New game</a>
 		</button>
+		<button type="submit" class="btn btn-info">
+			<a href="/platform"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Filter by Platform</a>
+		</button>
+		<button type="submit" class="btn btn-info">
+			<a href="/nintendo"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Filter by Publisher: Nintendo</a>
+		</button>
 		<br>
+	</div>
+	<div class="container text-left">
+		<form method = "POST" th:action="@{year}">
+			<input type="number" value="Year" name="year"/>
+			<input type="submit" value="Filter by year"/>
+		</form>
 	</div>
 	<div class="container text-center">
 		<table class="table table-striped">

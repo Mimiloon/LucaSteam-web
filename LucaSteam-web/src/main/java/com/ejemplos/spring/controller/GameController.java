@@ -72,5 +72,27 @@ public class GameController {
 		service.save(game);
 		return new ModelAndView("redirect:/lucasteam");
 	}
+	
+	//LISTAR POR AÑO
+	@PostMapping("/{Year}")
+	public String listByYear(@RequestParam int year,Model m) {
+		log.info("----- Inside listByYear");
+		m.addAttribute("gameList",service.findByYear(Integer.valueOf(year)));
+		return "GameList";
+	}
+	
+	@GetMapping("/platform")
+	public String listByGenre(Model m) {
+		log.info("----- Inside listByGenre");
+		m.addAttribute("gameList",service.findByGenre());
+		return "GameList";
+	}
+	
+	@GetMapping("/nintendo")
+	public String listByPublisher(Model m) {
+		log.info("----- Inside listByPublisher");
+		m.addAttribute("gameList",service.findByPublisher());
+		return "GameList";
+	}
 
 }

@@ -41,9 +41,22 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public List<Game> findByName(String name) {
 //		return gameDAO.findByName(name);
-		return null;
-		
-
+		return null;	
+	}
+	
+	@Override
+	public List<Game> findByYear(int year) {
+		return gameDAO.findByYear(year);
+	}
+	
+	@Override
+	public List<Game> findByGenre() {
+		return gameDAO.findByGenre();
+	}
+	
+	@Override
+	public List<Game> findByPublisher() {
+		return gameDAO.findByPublisher();
 	}
 
 }
